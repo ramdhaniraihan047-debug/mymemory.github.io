@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruang Kenang — Arsip Kenangan &amp; Video @osim_tsapa1</title>
+  <style>
+    :root {
+      --paper: #f1ede4;
+      --paper-deep: #e7e0d3;
+      --ink: #1e2923;
+      --soft: #536058;
+      --forest: #263c32;
+      --forest-dark: #18251d;
+      --accent: #b95f40;
+      --gold: #dca486;
+      --line: rgba(30, 41, 35, 0.18);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+    .shell { width: min(100%, 1380px); margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+    nav.topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(241, 237, 228, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 70px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav-links a { color: var(--soft); text-decoration: none; font-weight: 600; }
+    .nav-links a:hover { color: var(--ink); }
+    header.hero {
+      padding: 64px 0 72px;
+      border-bottom: 1px solid var(--line);
+      background: radial-gradient(circle at 18% 12%, rgba(255,255,255,0.7), transparent 36%), var(--paper);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    .eyebrow {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.88;
+      letter-spacing: -0.045em;
+      font-weight: 400;
+      margin: 18px 0 24px;
+    }
+    h1 em { color: var(--accent); font-style: italic; display: block; }
+    h2 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      font-weight: 400;
+      margin: 14px 0 20px;
+    }
+    .lead {
+      max-width: 580px;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--soft);
+      font-size: 16px;
+      margin: 0 0 28px;
+    }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 22px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--forest);
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--forest); color: #f8f4ea; }
+    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn-outline:hover { border-color: var(--ink); }
+    .hero-media { position: relative; }
+    .hero-main-img {
+      width: 100%;
+      aspect-ratio: 4 / 4.4;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 30px 70px rgba(24, 37, 29, 0.2);
+    }
+    .hero-sub-img {
+      position: absolute;
+      left: -24px;
+      bottom: -24px;
+      width: 150px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border: 6px solid var(--paper-deep);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+    @media (max-width: 640px) { .hero-sub-img { display: none; } }
+    .video-section { background: var(--forest); color: var(--paper); padding: 80px 0; }
+    .video-section .eyebrow { color: var(--gold); }
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: var(--paper);
+      padding: 10px 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--forest-dark);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 28px;
+    }
+    .video-card {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #1b2c24;
+      display: flex;
+      flex-direction: column;
+    }
+    .video-card.hidden, .story-card.hidden { display: none; }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .meta-bar.dark {
+      border-color: rgba(30, 41, 35, 0.12);
+      color: var(--accent);
+      padding: 0 0 10px;
+      margin-bottom: 12px;
+    }
+    .embed-wrap { position: relative; aspect-ratio: 4 / 5; background: #121e18; }
+    .embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .card-body {
+      padding: 22px;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-body h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+    .card-body p { font-size: 13.5px; opacity: 0.85; margin: 0 0 16px; }
+    .card-actions {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .card-actions a, .link-btn {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    .stories-section { padding: 80px 0; }
+    .search-bar {
+      width: 100%;
+      max-width: 440px;
+      padding: 13px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.5);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .story-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.42);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .story-thumb {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      background: var(--paper-deep);
+    }
+    .story-thumb img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .story-thumb:hover img { transform: scale(1.04); }
+    .badge {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      background: rgba(24, 37, 29, 0.88);
+      color: var(--gold);
+      padding: 5px 10px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .title-btn {
+      background: none;
+      border: 0;
+      padding: 0;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+    .title-btn:hover { color: var(--accent); }
+    .location {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--soft);
+    }
+    .keepsake {
+      margin: auto 0 0;
+      padding-top: 12px;
+      border-top: 1px solid rgba(30, 41, 35, 0.12);
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--accent);
+    }
+    dialog {
+      width: min(94vw, 960px);
+      max-height: 90vh;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 0;
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
+    }
+    dialog::backdrop { background: rgba(14, 22, 17, 0.72); backdrop-filter: blur(6px); }
+    .modal-head {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+    @media (max-width: 780px) { .modal-grid { grid-template-columns: 1fr; } }
+    .modal-media { background: #15211b; min-height: 420px; position: relative; }
+    .modal-media iframe, .modal-media img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; border: 0; display: block; }
+    .modal-body { padding: 28px; font-family: system-ui, -apple-system, sans-serif; }
+    .modal-body h3 { font-family: Georgia, serif; font-size: 32px; font-weight: 400; line-height: 1.1; margin: 10px 0 14px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      color: var(--soft);
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="shell topbar-inner">
+      <a href="#beranda" class="brand"><span class="brand-dot"></span> Ruang Kenang</a>
+      <div class="nav-links">
+        <a href="#video-ig">Video &amp; Reels (16)</a>
+        <a href="#arsip">Arsip Cerita</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="beranda" class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <div class="eyebrow">Arsip Kenangan @osim_tsapa1 &mdash; MTsN 1 Kota Payakumbuh</div>
+        <h1>Yang pernah kita rasa, <em>tinggal di sini.</em></h1>
+        <p class="lead">File web mandiri berisi 16 video Reels dan unggahan kenangan OSIM TSAPA lengkap dengan gambar dari setiap video dan cerita di baliknya.</p>
+        <div class="hero-cta">
+          <a href="#video-ig" class="btn btn-primary">Putar Video IG</a>
+          <a href="#arsip" class="btn btn-outline">Jelajahi Cerita</a>
+        </div>
+      </div>
+      <div class="hero-media">
+              <img class="hero-main-img" src="./images/ig/DaYBqAhBigB.jpg" alt="Pengurus OSIM TSAPA berpose bersama di MTsN 1 Kota Payakumbuh dalam video hitung mundur MATAMUDA" />
+              <img class="hero-sub-img" src="./images/ig/DRMf4STEbRo.jpg" alt="Sertijab OSIM 24/25 ke 25/26 — Kenangan Abadi" />
+            </div>
+    </div>
+  </header>
+
+  <section id="video-ig" class="video-section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Rekaman &amp; Reels @osim_tsapa1</div>
+          <h2>Momen bergerak, <em style="color:var(--gold)">putar kembali.</em></h2>
+        </div>
+        <div class="filter-row">
+          <button type="button" class="filter-btn active" onclick="filterVideos('all', this)">Semua (16)</button>
+          <button type="button" class="filter-btn" onclick="filterVideos('reel', this)">Video Reels (6)</button>
+          <button type="button" class="filter-btn" onclick="filterVideos('mozaik', this)">Mozaik Feed (9)</button>
+        </div>
+      </div>
+      <div class="grid">
+      <article class="video-card" data-kind="reel">
+        <div class="meta-bar">
+          <span>01 &mdash; Instagram Reel</span>
+          <span>10 Jul 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/reel/DaYBqAhBigB/embed/captioned/" title="Are You Ready — Hitung Mundur MATAMUDA" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Are You Ready — Hitung Mundur MATAMUDA</h3>
+          <p>Hitung mundur telah dimulai: petualangan baru, teman baru, dan cerita tak terlupakan di MATAMUDA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(1)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/reel/DaYBqAhBigB/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="reel">
+        <div class="meta-bar">
+          <span>02 &mdash; Instagram Reel</span>
+          <span>05 Feb 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/reel/Dda3Jwlu-tq/embed/captioned/" title="OPREC OSIM TSAPA Resmi Dibuka" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>OPREC OSIM TSAPA Resmi Dibuka</h3>
+          <p>Saatnya upgrade diri, mengasah kepemimpinan, dan merancang acara berkesan bersama tim yang solid.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(2)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/reel/Dda3Jwlu-tq/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="reel">
+        <div class="meta-bar">
+          <span>03 &mdash; Instagram Reel</span>
+          <span>18 Nov 2025</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/reel/DRMf4STEbRo/embed/captioned/" title="Sertijab OSIM 24/25 ke 25/26 — Kenangan Abadi" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Sertijab OSIM 24/25 ke 25/26 — Kenangan Abadi</h3>
+          <p>Kami purna, tapi kenangan kita akan selalu abadi menjadi sebuah kisah.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(3)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/reel/DRMf4STEbRo/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="reel">
+        <div class="meta-bar">
+          <span>04 &mdash; Instagram Reel</span>
+          <span>11 Des 2025</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/reel/DSHQZDBEYCm/embed/captioned/" title="Babak Baru OSIM &amp; DP — Menjalankan Amanah" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Babak Baru OSIM &amp; DP — Menjalankan Amanah</h3>
+          <p>Perjalanan tidak dimulai dengan kesempurnaan, tetapi dengan keberanian memikul amanah.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(4)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/reel/DSHQZDBEYCm/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="post">
+        <div class="meta-bar">
+          <span>05 &mdash; Instagram Post</span>
+          <span>12 Jul 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DarjEJdRWdk/embed/captioned/" title="Kami Tunggu di MATAMUDA 2026" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Kami Tunggu di MATAMUDA 2026</h3>
+          <p>12–15 Juli 2026 menjadi awal perjalanan penuh cerita, persahabatan, dan semangat baru.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(5)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DarjEJdRWdk/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="reel">
+        <div class="meta-bar">
+          <span>06 &mdash; Instagram Reel</span>
+          <span>15 Agu 2025</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/reel/DSfFYbrkWz0/embed/captioned/" title="4 Kata Ajaib &amp; Semangat Classmeeting TSAPA" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>4 Kata Ajaib &amp; Semangat Classmeeting TSAPA</h3>
+          <p>Program kerja IMTAQ tentang empat kata sederhana — Permisi, Tolong, Maaf, dan Terima Kasih.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(6)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/reel/DSfFYbrkWz0/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="reel">
+        <div class="meta-bar">
+          <span>07 &mdash; Instagram Reel</span>
+          <span>15 Agu 2025</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/reel/DNYUU5HRkA0/embed/captioned/" title="Keseruan Classmeeting MTsN 1 Payakumbuh" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Keseruan Classmeeting MTsN 1 Payakumbuh</h3>
+          <p>Work hard, play harder — bukan soal menang atau kalah, melainkan kebersamaan yang tercipta.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(7)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/reel/DNYUU5HRkA0/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>08 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdBDS7EVo3/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 01" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 01</h3>
+          <p>Potongan pertama dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(8)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdBDS7EVo3/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>09 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdBB8zkf4v/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 02" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 02</h3>
+          <p>Potongan kedua dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(9)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdBB8zkf4v/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>10 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdA738kUkq/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 03" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 03</h3>
+          <p>Potongan ketiga dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(10)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdA738kUkq/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>11 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdA6bvkQbo/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 04" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 04</h3>
+          <p>Potongan keempat dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(11)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdA6bvkQbo/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>12 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdA40nkStr/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 05" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 05</h3>
+          <p>Panel tengah dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(12)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdA40nkStr/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>13 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdA3RFkTr3/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 06" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 06</h3>
+          <p>Potongan keenam dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(13)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdA3RFkTr3/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>14 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdAxBOEccA/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 07" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 07</h3>
+          <p>Potongan ketujuh dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(14)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdAxBOEccA/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>15 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdAvMzEW2e/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 08" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 08</h3>
+          <p>Potongan kedelapan dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(15)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdAvMzEW2e/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card" data-kind="mozaik">
+        <div class="meta-bar">
+          <span>16 &mdash; Instagram Post</span>
+          <span>13 Jan 2026</span>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://www.instagram.com/p/DTdAt6BEaVc/embed/captioned/" title="Mozaik Arsip OSIM TSAPA — Panel 09" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Mozaik Arsip OSIM TSAPA — Panel 09</h3>
+          <p>Potongan penutup dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <div class="card-actions">
+            <button type="button" class="link-btn" onclick="openMemoryModal(16)">Baca cerita &nearr;</button>
+            <a href="https://www.instagram.com/p/DTdAt6BEaVc/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
+          </div>
+        </div>
+      </article></div>
+    </div>
+  </section>
+
+  <section id="arsip" class="stories-section">
+    <div class="shell">
+      <div class="section-head" style="border-color: var(--line);">
+        <div>
+          <div class="eyebrow">Semua Lembar Cerita</div>
+          <h2>Arsip lengkap kenangan.</h2>
+        </div>
+        <input type="search" class="search-bar" placeholder="Cari judul, tempat, atau cerita..." oninput="filterStories(this.value)" />
+      </div>
+      <div class="grid">
+      <article class="story-card" data-search="are you ready — hitung mundur matamuda halaman utama mtsn 1 kota payakumbuh osim tsapa, sobat tsapa hitung mundur telah dimulai: petualangan baru, teman baru, dan cerita tak terlupakan di matamuda. hitung mundur telah dimulai menuju masa ta&#39;aruf murid madrasah (matamuda) di mtsn 1 kota payakumbuh.
+
+petualangan baru, teman-teman baru, pengalaman baru, dan cerita yang tak terlupakan akan segera dimulai bersama keluarga besar sobat tsapa. karena setiap langkah awal adalah awal dari perjalanan yang luar biasa. video hitung mundur matamuda dan semangat menyambut keluarga baru madrasah.">
+        <div class="story-thumb" onclick="openMemoryModal(1)">
+          <img src="./images/ig/DaYBqAhBigB.jpg" alt="Pengurus OSIM TSAPA berpose bersama di MTsN 1 Kota Payakumbuh dalam video hitung mundur MATAMUDA" loading="lazy" />
+          <span class="badge">Reel IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>10 Juli 2026</span>
+            <span>Antusias</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(1)">Are You Ready — Hitung Mundur MATAMUDA</button></h3>
+          <p class="location">Halaman Utama MTsN 1 Kota Payakumbuh</p>
+          <p>Hitung mundur telah dimulai: petualangan baru, teman baru, dan cerita tak terlupakan di MATAMUDA.</p>
+          <blockquote class="keepsake">&ldquo;Video hitung mundur MATAMUDA dan semangat menyambut keluarga baru madrasah.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="oprec osim tsapa resmi dibuka taman &amp; prasasti mtsn 1 kota payakumbuh osim tsapa, calon pengurus osim saatnya upgrade diri, mengasah kepemimpinan, dan merancang acara berkesan bersama tim yang solid. halo sobat tsapa! open recruitment osim tsapa resmi dibuka sebagai ruang belajar kepemimpinan, public speaking, dan kerja tim yang solid.
+
+daripada hanya menjadi penonton, inilah saatnya mengambil aksi nyata dan membuat acara-acara seru bersama keluarga besar osim mtsn 1 kota payakumbuh. video ajakan oprec osim tsapa dengan energi kebersamaan di lingkungan madrasah.">
+        <div class="story-thumb" onclick="openMemoryModal(2)">
+          <img src="./images/ig/Dda3Jwlu-tq.jpg" alt="Pengurus OSIM TSAPA di depan prasasti MTsN 1 Kota Payakumbuh saat pembukaan OPREC" loading="lazy" />
+          <span class="badge">Reel IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>05 Februari 2026</span>
+            <span>Berani</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(2)">OPREC OSIM TSAPA Resmi Dibuka</button></h3>
+          <p class="location">Taman &amp; Prasasti MTsN 1 Kota Payakumbuh</p>
+          <p>Saatnya upgrade diri, mengasah kepemimpinan, dan merancang acara berkesan bersama tim yang solid.</p>
+          <blockquote class="keepsake">&ldquo;Video ajakan OPREC OSIM TSAPA dengan energi kebersamaan di lingkungan madrasah.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="sertijab osim 24/25 ke 25/26 — kenangan abadi gerbang utama mtsn 1 kota payakumbuh osim periode 24/25 &amp; 25/26 kami purna, tapi kenangan kita akan selalu abadi menjadi sebuah kisah. serah terima jabatan kali ini menjadi penutup bab perjalanan osim periode 2024/2025. banyak cerita lucu, kerja bareng di balik layar, dan pelajaran untuk menjadi lebih baik setiap hari.
+
+untuk osim 2025/2026, keluarga kecil ini dititipkan dengan penuh doa. kami purna, tetapi setiap tawa, rapat, dan langkah bersama akan selalu abadi menjadi sebuah kisah. momen serah terima amanah berseragam jas merah osim di mtsn 1 kota payakumbuh.">
+        <div class="story-thumb" onclick="openMemoryModal(3)">
+          <img src="./images/ig/DRMf4STEbRo.jpg" alt="Barisan pengurus OSIM berseragam jas merah dan selempang saat Sertijab di MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Reel IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>18 November 2025</span>
+            <span>Haru</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(3)">Sertijab OSIM 24/25 ke 25/26 — Kenangan Abadi</button></h3>
+          <p class="location">Gerbang Utama MTsN 1 Kota Payakumbuh</p>
+          <p>Kami purna, tapi kenangan kita akan selalu abadi menjadi sebuah kisah.</p>
+          <blockquote class="keepsake">&ldquo;Momen serah terima amanah berseragam jas merah OSIM di MTsN 1 Kota Payakumbuh.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="babak baru osim &amp; dp — menjalankan amanah lapangan upacara mtsn 1 kota payakumbuh osim &amp; dp mtsn 1 kota payakumbuh perjalanan tidak dimulai dengan kesempurnaan, tetapi dengan keberanian memikul amanah. perjalanan tidak dimulai dengan kesempurnaan, tetapi dengan keberanian. osim dan dewan penggalang kini memasuki babak baru, mengembara menjalankan tugas, merangkai pengalaman, dan belajar memahami arti dari sebuah amanah.
+
+kami berjalan bukan hanya untuk diri sendiri, melainkan untuk madrasah, teman-teman, dan kebaikan yang ingin ditinggalkan. rekaman langkah perdana pengurus baru osim dan dewan penggalang di lapangan madrasah.">
+        <div class="story-thumb" onclick="openMemoryModal(4)">
+          <img src="./images/ig/DSHQZDBEYCm.jpg" alt="Siswa dan pengurus OSIM &amp; DP berbaris di lapangan upacara MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Reel IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>11 Desember 2025</span>
+            <span>Khidmat</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(4)">Babak Baru OSIM &amp; DP — Menjalankan Amanah</button></h3>
+          <p class="location">Lapangan Upacara MTsN 1 Kota Payakumbuh</p>
+          <p>Perjalanan tidak dimulai dengan kesempurnaan, tetapi dengan keberanian memikul amanah.</p>
+          <blockquote class="keepsake">&ldquo;Rekaman langkah perdana pengurus baru OSIM dan Dewan Penggalang di lapangan madrasah.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="kami tunggu di matamuda 2026 mtsn 1 kota payakumbuh osim tsapa, murid baru 2026 12–15 juli 2026 menjadi awal perjalanan penuh cerita, persahabatan, dan semangat baru. saatnya melangkah, saatnya berproses, dan saatnya menjadi bagian dari keluarga besar mtsn 1 kota payakumbuh pada 12–15 juli 2026 melalui matamuda (masa ta&#39;aruf murid madrasah).
+
+mari bersama-sama membangun karakter, menumbuhkan akhlak mulia, mempererat ukhuwah, serta menciptakan kenangan indah di madrasah tercinta. poster pengumuman matamuda 12–15 juli 2026 untuk generasi madrasah.">
+        <div class="story-thumb" onclick="openMemoryModal(5)">
+          <img src="./images/ig/DarjEJdRWdk.webp" alt="Visual pengumuman resmi MATAMUDA 2026 MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>12 Juli 2026</span>
+            <span>Hangat</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(5)">Kami Tunggu di MATAMUDA 2026</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>12–15 Juli 2026 menjadi awal perjalanan penuh cerita, persahabatan, dan semangat baru.</p>
+          <blockquote class="keepsake">&ldquo;Poster pengumuman MATAMUDA 12–15 Juli 2026 untuk generasi madrasah.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="4 kata ajaib &amp; semangat classmeeting tsapa panggung utama mtsn 1 kota payakumbuh bidang imtaq osim tsapa program kerja imtaq tentang empat kata sederhana — permisi, tolong, maaf, dan terima kasih. pada 15 agustus 2025, osim tsapa berbagi pengingat sederhana lewat program kerja imtaq tentang empat kata ajaib dalam keseharian: permisi, tolong, maaf, dan terima kasih.
+
+empat kata yang terdengar ringan, tetapi mampu menjaga rasa hormat, ketulusan, dan keharmonisan di lingkungan madrasah setiap hari. catatan 15 agustus 2025 tentang adab sederhana dan kebersamaan di sekolah.">
+        <div class="story-thumb" onclick="openMemoryModal(6)">
+          <img src="./images/ig/DSfFYbrkWz0.jpg" alt="Suasana kegiatan di panggung MTsN 1 Kota Payakumbuh dari video Instagram OSIM TSAPA" loading="lazy" />
+          <span class="badge">Reel IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>15 Agustus 2025</span>
+            <span>Hangat</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(6)">4 Kata Ajaib &amp; Semangat Classmeeting TSAPA</button></h3>
+          <p class="location">Panggung Utama MTsN 1 Kota Payakumbuh</p>
+          <p>Program kerja IMTAQ tentang empat kata sederhana — Permisi, Tolong, Maaf, dan Terima Kasih.</p>
+          <blockquote class="keepsake">&ldquo;Catatan 15 Agustus 2025 tentang adab sederhana dan kebersamaan di sekolah.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="keseruan classmeeting mtsn 1 payakumbuh koridor kelas mtsn 1 kota payakumbuh seluruh siswa &amp; osim tsapa work hard, play harder — bukan soal menang atau kalah, melainkan kebersamaan yang tercipta. suasana riuh dan sorak dukungan memenuhi koridor dan lapangan saat kegiatan di mtsn 1 kota payakumbuh berlangsung.
+
+bukan sekadar soal siapa yang menang atau kalah di tiap cabang lomba, tetapi tentang tawa bersama teman sekelas dan kenangan yang membuat bangga menjadi bagian dari tsapa. sorak kebersamaan antarkelas dan kebanggaan menjadi bagian dari tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(7)">
+          <img src="./images/ig/DNYUU5HRkA0.jpg" alt="Siswa berseragam pramuka berinteraksi di koridor MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Reel IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>15 Agustus 2025</span>
+            <span>Riuh</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(7)">Keseruan Classmeeting MTsN 1 Payakumbuh</button></h3>
+          <p class="location">Koridor Kelas MTsN 1 Kota Payakumbuh</p>
+          <p>Work hard, play harder — bukan soal menang atau kalah, melainkan kebersamaan yang tercipta.</p>
+          <blockquote class="keepsake">&ldquo;Sorak kebersamaan antarkelas dan kebanggaan menjadi bagian dari TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 01 mtsn 1 kota payakumbuh osim tsapa potongan pertama dari mozaik visual identitas dan perjalanan osim tsapa. bagian pertama dari rangkaian sembilan panel mozaik visual @osim_tsapa1 yang merangkum wajah, semangat, dan kebersamaan pengurus osim mtsn 1 kota payakumbuh dalam satu bingkai besar. panel 01 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(8)">
+          <img src="./images/ig/DTdBDS7EVo3.webp" alt="Panel 01 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(8)">Mozaik Arsip OSIM TSAPA — Panel 01</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan pertama dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 01 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 02 mtsn 1 kota payakumbuh osim tsapa potongan kedua dari mozaik visual identitas dan perjalanan osim tsapa. bagian kedua dari rangkaian sembilan panel mozaik visual @osim_tsapa1 yang menyatukan cerita tiap bidang dan langkah pengabdian di madrasah. panel 02 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(9)">
+          <img src="./images/ig/DTdBB8zkf4v.webp" alt="Panel 02 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(9)">Mozaik Arsip OSIM TSAPA — Panel 02</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan kedua dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 02 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 03 mtsn 1 kota payakumbuh osim tsapa potongan ketiga dari mozaik visual identitas dan perjalanan osim tsapa. bagian ketiga dari rangkaian sembilan panel mozaik visual @osim_tsapa1 yang menyimpan jejak kolaborasi antaranggota osim mtsn 1 kota payakumbuh. panel 03 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(10)">
+          <img src="./images/ig/DTdA738kUkq.webp" alt="Panel 03 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(10)">Mozaik Arsip OSIM TSAPA — Panel 03</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan ketiga dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 03 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 04 mtsn 1 kota payakumbuh osim tsapa potongan keempat dari mozaik visual identitas dan perjalanan osim tsapa. bagian keempat dari rangkaian sembilan panel mozaik visual @osim_tsapa1 sebagai penanda babak kerja sama dan karya baru di madrasah. panel 04 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(11)">
+          <img src="./images/ig/DTdA6bvkQbo.webp" alt="Panel 04 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(11)">Mozaik Arsip OSIM TSAPA — Panel 04</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan keempat dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 04 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 05 mtsn 1 kota payakumbuh osim tsapa panel tengah dari mozaik visual identitas dan perjalanan osim tsapa. panel pusat dari sembilan potongan mozaik visual @osim_tsapa1 yang mempertemukan seluruh bagian cerita osim mtsn 1 kota payakumbuh. panel 05 (tengah) dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(12)">
+          <img src="./images/ig/DTdA40nkStr.webp" alt="Panel 05 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(12)">Mozaik Arsip OSIM TSAPA — Panel 05</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Panel tengah dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 05 (tengah) dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 06 mtsn 1 kota payakumbuh osim tsapa potongan keenam dari mozaik visual identitas dan perjalanan osim tsapa. bagian keenam dari sembilan panel mozaik visual @osim_tsapa1 yang mengabadikan kebersamaan tim di balik setiap kegiatan sekolah. panel 06 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(13)">
+          <img src="./images/ig/DTdA3RFkTr3.webp" alt="Panel 06 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(13)">Mozaik Arsip OSIM TSAPA — Panel 06</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan keenam dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 06 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 07 mtsn 1 kota payakumbuh osim tsapa potongan ketujuh dari mozaik visual identitas dan perjalanan osim tsapa. bagian ketujuh dari sembilan panel mozaik visual @osim_tsapa1 yang menjadi arsip digital perjalanan pengurus osim mtsn 1 kota payakumbuh. panel 07 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(14)">
+          <img src="./images/ig/DTdAxBOEccA.webp" alt="Panel 07 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(14)">Mozaik Arsip OSIM TSAPA — Panel 07</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan ketujuh dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 07 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 08 mtsn 1 kota payakumbuh osim tsapa potongan kedelapan dari mozaik visual identitas dan perjalanan osim tsapa. bagian kedelapan dari sembilan panel mozaik visual @osim_tsapa1 yang melengkapi kisah kebersamaan di lingkungan madrasah. panel 08 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(15)">
+          <img src="./images/ig/DTdAvMzEW2e.webp" alt="Panel 08 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(15)">Mozaik Arsip OSIM TSAPA — Panel 08</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan kedelapan dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 08 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article>
+
+      <article class="story-card" data-search="mozaik arsip osim tsapa — panel 09 mtsn 1 kota payakumbuh osim tsapa potongan penutup dari mozaik visual identitas dan perjalanan osim tsapa. bagian kesembilan sekaligus penutup rangkaian mozaik visual @osim_tsapa1 yang menyatukan seluruh kenangan osim mtsn 1 kota payakumbuh. panel 09 dari 09 rangkaian grid arsip visual osim tsapa.">
+        <div class="story-thumb" onclick="openMemoryModal(16)">
+          <img src="./images/ig/DTdAt6BEaVc.webp" alt="Panel 09 mozaik arsip visual OSIM TSAPA MTsN 1 Kota Payakumbuh" loading="lazy" />
+          <span class="badge">Post IG</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-bar dark">
+            <span>13 Januari 2026</span>
+            <span>Kompak</span>
+          </div>
+          <h3><button type="button" class="title-btn" onclick="openMemoryModal(16)">Mozaik Arsip OSIM TSAPA — Panel 09</button></h3>
+          <p class="location">MTsN 1 Kota Payakumbuh</p>
+          <p>Potongan penutup dari mozaik visual identitas dan perjalanan OSIM TSAPA.</p>
+          <blockquote class="keepsake">&ldquo;Panel 09 dari 09 rangkaian grid arsip visual OSIM TSAPA.&rdquo;</blockquote>
+        </div>
+      </article></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shell">Ruang Kenang &mdash; Arsip Digital @osim_tsapa1 MTsN 1 Kota Payakumbuh (2026)</div>
+  </footer>
+
+  <dialog id="memory-dialog">
+    <div class="modal-head">
+      <span id="modal-meta">Lembar Kenangan</span>
+      <button type="button" class="btn btn-outline" style="padding:8px 14px;" onclick="document.getElementById('memory-dialog').close()">Tutup &times;</button>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </dialog>
+
+  <script>
+    const MEMORIES = [{"id":1,"title":"Are You Ready — Hitung Mundur MATAMUDA","date":"10 Juli 2026","location":"Halaman Utama MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Antusias","people":"OSIM TSAPA, Sobat TSAPA","excerpt":"Hitung mundur telah dimulai: petualangan baru, teman baru, dan cerita tak terlupakan di MATAMUDA.","story":"Hitung mundur telah dimulai menuju Masa Ta'aruf Murid Madrasah (MATAMUDA) di MTsN 1 Kota Payakumbuh.\n\nPetualangan baru, teman-teman baru, pengalaman baru, dan cerita yang tak terlupakan akan segera dimulai bersama keluarga besar Sobat TSAPA. Karena setiap langkah awal adalah awal dari perjalanan yang luar biasa.","keepsake":"Video hitung mundur MATAMUDA dan semangat menyambut keluarga baru madrasah.","imgSrc":"./images/ig/DaYBqAhBigB.jpg","embedUrl":"https://www.instagram.com/reel/DaYBqAhBigB/embed/captioned/","canonicalUrl":"https://www.instagram.com/reel/DaYBqAhBigB/"},{"id":2,"title":"OPREC OSIM TSAPA Resmi Dibuka","date":"05 Februari 2026","location":"Taman & Prasasti MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Berani","people":"OSIM TSAPA, Calon Pengurus OSIM","excerpt":"Saatnya upgrade diri, mengasah kepemimpinan, dan merancang acara berkesan bersama tim yang solid.","story":"Halo Sobat TSAPA! Open Recruitment OSIM TSAPA resmi dibuka sebagai ruang belajar kepemimpinan, public speaking, dan kerja tim yang solid.\n\nDaripada hanya menjadi penonton, inilah saatnya mengambil aksi nyata dan membuat acara-acara seru bersama keluarga besar OSIM MTsN 1 Kota Payakumbuh.","keepsake":"Video ajakan OPREC OSIM TSAPA dengan energi kebersamaan di lingkungan madrasah.","imgSrc":"./images/ig/Dda3Jwlu-tq.jpg","embedUrl":"https://www.instagram.com/reel/Dda3Jwlu-tq/embed/captioned/","canonicalUrl":"https://www.instagram.com/reel/Dda3Jwlu-tq/"},{"id":3,"title":"Sertijab OSIM 24/25 ke 25/26 — Kenangan Abadi","date":"18 November 2025","location":"Gerbang Utama MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Haru","people":"OSIM Periode 24/25 & 25/26","excerpt":"Kami purna, tapi kenangan kita akan selalu abadi menjadi sebuah kisah.","story":"Serah terima jabatan kali ini menjadi penutup bab perjalanan OSIM Periode 2024/2025. Banyak cerita lucu, kerja bareng di balik layar, dan pelajaran untuk menjadi lebih baik setiap hari.\n\nUntuk OSIM 2025/2026, keluarga kecil ini dititipkan dengan penuh doa. Kami purna, tetapi setiap tawa, rapat, dan langkah bersama akan selalu abadi menjadi sebuah kisah.","keepsake":"Momen serah terima amanah berseragam jas merah OSIM di MTsN 1 Kota Payakumbuh.","imgSrc":"./images/ig/DRMf4STEbRo.jpg","embedUrl":"https://www.instagram.com/reel/DRMf4STEbRo/embed/captioned/","canonicalUrl":"https://www.instagram.com/reel/DRMf4STEbRo/"},{"id":4,"title":"Babak Baru OSIM & DP — Menjalankan Amanah","date":"11 Desember 2025","location":"Lapangan Upacara MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Khidmat","people":"OSIM & DP MTsN 1 Kota Payakumbuh","excerpt":"Perjalanan tidak dimulai dengan kesempurnaan, tetapi dengan keberanian memikul amanah.","story":"Perjalanan tidak dimulai dengan kesempurnaan, tetapi dengan keberanian. OSIM dan Dewan Penggalang kini memasuki babak baru, mengembara menjalankan tugas, merangkai pengalaman, dan belajar memahami arti dari sebuah amanah.\n\nKami berjalan bukan hanya untuk diri sendiri, melainkan untuk madrasah, teman-teman, dan kebaikan yang ingin ditinggalkan.","keepsake":"Rekaman langkah perdana pengurus baru OSIM dan Dewan Penggalang di lapangan madrasah.","imgSrc":"./images/ig/DSHQZDBEYCm.jpg","embedUrl":"https://www.instagram.com/reel/DSHQZDBEYCm/embed/captioned/","canonicalUrl":"https://www.instagram.com/reel/DSHQZDBEYCm/"},{"id":5,"title":"Kami Tunggu di MATAMUDA 2026","date":"12 Juli 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Hangat","people":"OSIM TSAPA, Murid Baru 2026","excerpt":"12–15 Juli 2026 menjadi awal perjalanan penuh cerita, persahabatan, dan semangat baru.","story":"Saatnya melangkah, saatnya berproses, dan saatnya menjadi bagian dari keluarga besar MTsN 1 Kota Payakumbuh pada 12–15 Juli 2026 melalui MATAMUDA (Masa Ta'aruf Murid Madrasah).\n\nMari bersama-sama membangun karakter, menumbuhkan akhlak mulia, mempererat ukhuwah, serta menciptakan kenangan indah di madrasah tercinta.","keepsake":"Poster pengumuman MATAMUDA 12–15 Juli 2026 untuk generasi madrasah.","imgSrc":"./images/ig/DarjEJdRWdk.webp","embedUrl":"https://www.instagram.com/p/DarjEJdRWdk/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DarjEJdRWdk/"},{"id":6,"title":"4 Kata Ajaib & Semangat Classmeeting TSAPA","date":"15 Agustus 2025","location":"Panggung Utama MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Hangat","people":"Bidang IMTAQ OSIM TSAPA","excerpt":"Program kerja IMTAQ tentang empat kata sederhana — Permisi, Tolong, Maaf, dan Terima Kasih.","story":"Pada 15 Agustus 2025, OSIM TSAPA berbagi pengingat sederhana lewat Program Kerja IMTAQ tentang empat kata ajaib dalam keseharian: Permisi, Tolong, Maaf, dan Terima Kasih.\n\nEmpat kata yang terdengar ringan, tetapi mampu menjaga rasa hormat, ketulusan, dan keharmonisan di lingkungan madrasah setiap hari.","keepsake":"Catatan 15 Agustus 2025 tentang adab sederhana dan kebersamaan di sekolah.","imgSrc":"./images/ig/DSfFYbrkWz0.jpg","embedUrl":"https://www.instagram.com/reel/DSfFYbrkWz0/embed/captioned/","canonicalUrl":"https://www.instagram.com/reel/DSfFYbrkWz0/"},{"id":7,"title":"Keseruan Classmeeting MTsN 1 Payakumbuh","date":"15 Agustus 2025","location":"Koridor Kelas MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Riuh","people":"Seluruh Siswa & OSIM TSAPA","excerpt":"Work hard, play harder — bukan soal menang atau kalah, melainkan kebersamaan yang tercipta.","story":"Suasana riuh dan sorak dukungan memenuhi koridor dan lapangan saat kegiatan di MTsN 1 Kota Payakumbuh berlangsung.\n\nBukan sekadar soal siapa yang menang atau kalah di tiap cabang lomba, tetapi tentang tawa bersama teman sekelas dan kenangan yang membuat bangga menjadi bagian dari TSAPA.","keepsake":"Sorak kebersamaan antarkelas dan kebanggaan menjadi bagian dari TSAPA.","imgSrc":"./images/ig/DNYUU5HRkA0.jpg","embedUrl":"https://www.instagram.com/reel/DNYUU5HRkA0/embed/captioned/","canonicalUrl":"https://www.instagram.com/reel/DNYUU5HRkA0/"},{"id":8,"title":"Mozaik Arsip OSIM TSAPA — Panel 01","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan pertama dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian pertama dari rangkaian sembilan panel mozaik visual @osim_tsapa1 yang merangkum wajah, semangat, dan kebersamaan pengurus OSIM MTsN 1 Kota Payakumbuh dalam satu bingkai besar.","keepsake":"Panel 01 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdBDS7EVo3.webp","embedUrl":"https://www.instagram.com/p/DTdBDS7EVo3/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdBDS7EVo3/"},{"id":9,"title":"Mozaik Arsip OSIM TSAPA — Panel 02","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan kedua dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian kedua dari rangkaian sembilan panel mozaik visual @osim_tsapa1 yang menyatukan cerita tiap bidang dan langkah pengabdian di madrasah.","keepsake":"Panel 02 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdBB8zkf4v.webp","embedUrl":"https://www.instagram.com/p/DTdBB8zkf4v/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdBB8zkf4v/"},{"id":10,"title":"Mozaik Arsip OSIM TSAPA — Panel 03","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan ketiga dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian ketiga dari rangkaian sembilan panel mozaik visual @osim_tsapa1 yang menyimpan jejak kolaborasi antaranggota OSIM MTsN 1 Kota Payakumbuh.","keepsake":"Panel 03 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdA738kUkq.webp","embedUrl":"https://www.instagram.com/p/DTdA738kUkq/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdA738kUkq/"},{"id":11,"title":"Mozaik Arsip OSIM TSAPA — Panel 04","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan keempat dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian keempat dari rangkaian sembilan panel mozaik visual @osim_tsapa1 sebagai penanda babak kerja sama dan karya baru di madrasah.","keepsake":"Panel 04 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdA6bvkQbo.webp","embedUrl":"https://www.instagram.com/p/DTdA6bvkQbo/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdA6bvkQbo/"},{"id":12,"title":"Mozaik Arsip OSIM TSAPA — Panel 05","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Panel tengah dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Panel pusat dari sembilan potongan mozaik visual @osim_tsapa1 yang mempertemukan seluruh bagian cerita OSIM MTsN 1 Kota Payakumbuh.","keepsake":"Panel 05 (tengah) dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdA40nkStr.webp","embedUrl":"https://www.instagram.com/p/DTdA40nkStr/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdA40nkStr/"},{"id":13,"title":"Mozaik Arsip OSIM TSAPA — Panel 06","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan keenam dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian keenam dari sembilan panel mozaik visual @osim_tsapa1 yang mengabadikan kebersamaan tim di balik setiap kegiatan sekolah.","keepsake":"Panel 06 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdA3RFkTr3.webp","embedUrl":"https://www.instagram.com/p/DTdA3RFkTr3/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdA3RFkTr3/"},{"id":14,"title":"Mozaik Arsip OSIM TSAPA — Panel 07","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan ketujuh dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian ketujuh dari sembilan panel mozaik visual @osim_tsapa1 yang menjadi arsip digital perjalanan pengurus OSIM MTsN 1 Kota Payakumbuh.","keepsake":"Panel 07 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdAxBOEccA.webp","embedUrl":"https://www.instagram.com/p/DTdAxBOEccA/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdAxBOEccA/"},{"id":15,"title":"Mozaik Arsip OSIM TSAPA — Panel 08","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan kedelapan dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian kedelapan dari sembilan panel mozaik visual @osim_tsapa1 yang melengkapi kisah kebersamaan di lingkungan madrasah.","keepsake":"Panel 08 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdAvMzEW2e.webp","embedUrl":"https://www.instagram.com/p/DTdAvMzEW2e/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdAvMzEW2e/"},{"id":16,"title":"Mozaik Arsip OSIM TSAPA — Panel 09","date":"13 Januari 2026","location":"MTsN 1 Kota Payakumbuh","category":"OSIM TSAPA","mood":"Kompak","people":"OSIM TSAPA","excerpt":"Potongan penutup dari mozaik visual identitas dan perjalanan OSIM TSAPA.","story":"Bagian kesembilan sekaligus penutup rangkaian mozaik visual @osim_tsapa1 yang menyatukan seluruh kenangan OSIM MTsN 1 Kota Payakumbuh.","keepsake":"Panel 09 dari 09 rangkaian grid arsip visual OSIM TSAPA.","imgSrc":"./images/ig/DTdAt6BEaVc.webp","embedUrl":"https://www.instagram.com/p/DTdAt6BEaVc/embed/captioned/","canonicalUrl":"https://www.instagram.com/p/DTdAt6BEaVc/"}];
+
+    function filterVideos(kind, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      document.querySelectorAll('.video-card').forEach(card => {
+        const show = kind === 'all' || card.dataset.kind === kind;
+        card.classList.toggle('hidden', !show);
+      });
+    }
+
+    function filterStories(query) {
+      const q = (query || '').trim().toLowerCase();
+      document.querySelectorAll('.story-card').forEach(card => {
+        const hay = card.dataset.search || '';
+        card.classList.toggle('hidden', Boolean(q) && !hay.includes(q));
+      });
+    }
+
+    function openMemoryModal(id) {
+      const item = MEMORIES.find(m => m.id === id);
+      if (!item) return;
+      const dialog = document.getElementById('memory-dialog');
+      document.getElementById('modal-meta').textContent = item.category + ' / ' + item.date;
+      const media = document.getElementById('modal-media');
+      if (item.embedUrl) {
+        media.innerHTML = '<iframe src="' + item.embedUrl + '" title="' + item.title.replace(/"/g, '&quot;') + '" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>';
+      } else if (item.imgSrc) {
+        media.innerHTML = '<img src="' + item.imgSrc + '" alt="' + item.title.replace(/"/g, '&quot;') + '" />';
+      } else {
+        media.innerHTML = '';
+      }
+      const paragraphs = item.story.split(/\n+/).map(p => '<p style="line-height:1.8;margin:0 0 14px;">' + p + '</p>').join('');
+      document.getElementById('modal-body').innerHTML =
+        '<div class="eyebrow">' + item.location + '</div>' +
+        '<h3>' + item.title + '</h3>' +
+        '<p style="font-family:Georgia,serif;font-style:italic;font-size:18px;color:#536058;margin:0 0 18px;">' + item.excerpt + '</p>' +
+        paragraphs +
+        (item.people ? '<p style="font-size:12px;color:#536058;margin-top:16px;"><strong>Bersama:</strong> ' + item.people + '</p>' : '') +
+        (item.canonicalUrl ? '<p style="margin-top:20px;"><a class="btn btn-primary" href="' + item.canonicalUrl + '" target="_blank" rel="noopener noreferrer">Buka di Instagram &nearr;</a></p>' : '');
+      dialog.showModal();
+    }
+  </script>
+</body>
+</html>
